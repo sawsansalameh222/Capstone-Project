@@ -23,7 +23,10 @@ Each user can edit or delete their own recipes anytime.
 6. visitor view a list of recipes in page in the navbar contains all recipes
 7.  visitor view a single recipe with details of that recipe like see ingredients and steps...etc.
 8. user can see only his recipes manage and organize them 
-9. admin manage all recipes and users to maintain the paltform and remove inappropriate content
+
+9. As a visitor/user, I want to search or  filter recipes by category so I can find the type of dish I want quickly.
+
+10. admin manage all recipes and users to maintain the paltform and remove inappropriate content
 
 ## ERD 
 ![ERD](./images/Untitled.png)
