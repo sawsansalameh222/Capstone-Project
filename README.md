@@ -26,7 +26,7 @@ Each user can edit or delete their own recipes anytime.
 9. admin manage all recipes and users to maintain the paltform and remove inappropriate content
 
 ## ERD 
-![ERD](Untitled.png)
+![ERD](./images/Untitled.png)
 ## Relationships
 I have 3 models  (User, Reciepes , Cateogry )
 - One user can have many recipes 
