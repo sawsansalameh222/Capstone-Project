@@ -1,0 +1,10 @@
+
+
+<h1>Welcome to Recipe Home Page 🍳</h1>
+
+{% if user.is_authenticated %}
+    <p>Hello, {{ user.username }}! </p>
+{% else %}
+    <p>Hello, Guest! Please <a href="{% url 'login' %}">login</a> to access more features.</p>
+{% endif %}
+
