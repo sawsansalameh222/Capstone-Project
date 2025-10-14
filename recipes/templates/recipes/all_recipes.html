@@ -1,0 +1,17 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block content %}
+<h1> All Recipes</h1>
+{% for recipe in recipes %}
+    <div class="recipe-card">
+        <h2><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></h2>
+        <p>{{ recipe.description|truncatewords:20 }}</p>
+        {% if recipe.image %}
+            <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+        {% endif %}
+    </div>
+{% empty %}
+    <p>No recipes available.</p>
+{% endfor %}
+{% endblock content%}

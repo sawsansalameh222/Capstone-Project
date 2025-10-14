@@ -1,0 +1,90 @@
+body {
+    background-color: rgb(255, 255, 255);
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+    
+}
+main {
+    flex: 1; 
+}
+.navbar {
+    background-color: rgb(158, 91, 122);
+    display:flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    text-align: right;
+}
+.nav-links{
+    display: flex;
+    gap: 15px;
+}
+.footer {
+    background-color: rgb(158, 91, 122);
+    padding: 20px ;
+    margin-bottom: 7px;
+    text-align: center;
+}
+.site-name p{
+font-weight: bold;
+font-size: 25px;
+font-family: 'lucida calligraphy';
+text-align: left;
+margin : 0;
+}
+.site-icon {
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+}
+nav {
+    background-color: white;
+    padding : 10 px;
+}
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav a:hover {
+    color: rgb(211, 161, 22);
+}
+nav a.active {
+    color: rgb(143, 38, 38);
+    text-decoration: underline;
+}
+nav button {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+nav form {
+    display: inline;
+}
+
+.container{
+    display:flex;
+    gap:19px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.left{
+    flex :.7px;
+
+}
+.left img{
+    width:100%;
+    height:auto ;
+    border-radius: 10px;
+}
+.right{
+    flex:1;
+}
+

@@ -1,1 +1,20 @@
 {% extends 'Base.html' %}
+
+
+{% block content %}
+<h1>User Profile</h1>
+<p>Username: {{ user.username }}</p>
+<ul>
+    {% for recipe in recipes %}
+        <li>
+            <a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a>
+            {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+            {% endif %}
+
+        </li>
+    {% empty %}
+        <li>No recipes found.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

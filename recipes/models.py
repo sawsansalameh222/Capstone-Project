@@ -21,7 +21,8 @@ class Recipe(models.Model):
     updated_at=models.DateTimeField(auto_now=True)
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     category=models.ForeignKey(Categories, on_delete=models.SET_NULL, null=True, blank=True)
-    
+    rating = models.IntegerField(null=True,blank=True,default=0,help_text="Rate recipe out of 5")
+
     def __str__(self):
         return self.title
 
