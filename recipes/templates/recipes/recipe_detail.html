@@ -1,9 +1,9 @@
 {% extends 'Base.html' %}
+{% block content%}
 {% load static %}
-{% block content %}
 
 <div class="container">
-    <div class="left">
+    <div class="left card">
         <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
 </div>
     <div class="right">

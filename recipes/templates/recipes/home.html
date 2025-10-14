@@ -2,18 +2,42 @@
 {% load static %}
 
 {% block content %}
+<style>
+    .recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr); 
+    gap: 50px;
+    padding: 30px;
+    justify-items: center; }
 
-<h1>Welcome to Recipe Home Page 🍳</h1>
+    .card{
+        background-color: white;
+        padding: 15px;
+        margin: 10px;
+        height: 600px;
 
-{% if user.is_authenticated %}
-    <p>Hello, {{ user.username }}!</p>
-{% else %}
-    <p>Hello, Guest! Please <a href="{% url 'login' %}">login</a> to access more features.</p>
-{% endif %}
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 4px 6px  rgba(0,0,0,0.1) ;
+        width: 100%; 
+    }
+    .card img {
+        object-fit: cover;
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+        height:500px;
+    }
+    
+</style>
+<h1 style="text-align: center;">Welcome to Recipe Home Page 🍳</h1>
 
-<h1> All Recipes</h1>
+
+<h3 style="text-align: center;"> You can find All Recipes here </h3>
+<div class="recipes-grid">
 {% for recipe in recipes %}
-    <div class="recipe-card">
+<div class ="card">
+    
         {% if recipe.image %}
             <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
             <h2><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></h2>
@@ -22,5 +46,6 @@
 {% empty %}
     <p>No recipes available.</p>
 {% endfor %}
+</div>
 
 {% endblock content %}

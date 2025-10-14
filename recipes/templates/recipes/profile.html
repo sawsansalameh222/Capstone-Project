@@ -1,20 +1,19 @@
 {% extends 'Base.html' %}
-
-
 {% block content %}
-<h1>User Profile</h1>
-<p>Username: {{ user.username }}</p>
-<ul>
-    {% for recipe in recipes %}
-        <li>
-            <a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a>
-            {% if recipe.image %}
-                <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
-            {% endif %}
+{% load static %}
 
-        </li>
+<h2 style="text-align: center;"> Here You can Find all your recipes 👩‍🍳👨‍🍳</h2>
+<div class="recipes-grid">
+    {% for recipe in recipes %}
+    <div class="card">
+        {% if recipe.image %}
+            <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+        {% endif %}
+        <h2><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></h2>
+    </div>
     {% empty %}
-        <li>No recipes found.</li>
+        <p>No recipes found.</p>
     {% endfor %}
-</ul>
+</div>
+
 {% endblock content %}
