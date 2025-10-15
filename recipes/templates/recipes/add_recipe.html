@@ -1,10 +1,90 @@
 {% extends 'Base.html' %}
+{% load static%}
 {% block content %}
-<h1>Add New Recipe</h1>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+}
+main {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .card_add{
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    max-width: 400px;
+    width: 100%;   
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;  
+    }
+
+    .card_add h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .card_add p {
+        margin-bottom: 15px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .card_add button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #9e5b7a;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .card_add  button:hover {
+        background-color: #7a4160;
+    }
+</style>
+
+<div class="card_add">
+
+<h1>Add Your New Recipe</h1>
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Recipe</button>
+
+    <p><label for="id_title">Title:</label>
+    {{ form.title }}</p>
+
+    <p><label for="id_ingredients">Ingredients:</label>
+    {{ form.ingredients }}</p>
+
+    <p><label for="id_steps">Steps:</label>
+    {{ form.steps }}</p>
+
+    <p><label for="id_image">Image:</label>
+    {{ form.image }}</p>
+
+    <p><label for="id_prep_time">Preparation Time (minutes):</label>
+    {{ form.prep_time }}</p>
+
+    <p><label for="id_category">Category:</label>
+    {{ form.category }}</p>
+
+    <p><label for="id_rating">Rating (0-5):</label>
+    {{ form.rating }}</p>
+
+    <button type="submit">Save Recipe</button>
 </form>
+</div>
 {% endblock content %}

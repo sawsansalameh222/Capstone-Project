@@ -3,12 +3,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <meta charset="UTF-8">
     <title>My Recipes</title>
+    
 </head>
 <body>        
+    
     <nav class="navbar">
          <div class ="site-name">
             <p>My Recipe Site <img src="{% static 'img/websiteIcon.png' %}" alt="Icon" class="site-icon"></p>
@@ -16,9 +20,9 @@
         <div class="nav-links">
         <a href="{% url 'home' %}">Home </a>
         <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'add_recipe' %}">Add Recipe</a>
 
         {% if user.is_authenticated %}
+         <a href="{% url 'add_recipe' %}">Add Recipe</a>
             <a href="{% url 'profile' %}">Profile</a>
             <form method="post" action="{% url 'logout' %}" style="display:inline;">
                 {% csrf_token %}
@@ -28,14 +32,17 @@
             <a href="{% url 'login' %}">Login</a>
         {% endif %}
         </div>
+    
+        
     </nav>
 
     <main>
     {% block content %}
     {% endblock content %}
     </main>
-</body>
- <footer class="footer">
+     <footer class="footer">
         <p>&copy; 2025 My Recipe Website</p>
     </footer>
+</body>
+
 </html>

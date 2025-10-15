@@ -1,6 +1,77 @@
 {% extends 'Base.html' %}
-
+{% load static %}
 {% block content %}
-<h1>About Us</h1>
+
+<style>
+        body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+}
+main {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .container_about {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.left_about{
+    flex: 1;
+    max-width: 500px;
+}
+.right_about {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.right_about img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);}
+    .card_about {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+</style>
+
+<div class="container_about">
+    <div class="left_about">
+    <div class="card_about">
+<h1>Welcome To Our Recipe Platform</h1>
 <p>Welcome to our recipe website! We are passionate about sharing delicious recipes from around the world.</p>
+</div>
+<br>
+<div class="card_about">
+<h2>Our Mission</h2>
+<p>Our mission is to make cooking accessible and enjoyable for everyone, from beginners to professional chefs. We aim to inspire creativity in the kitchen and connect people through the joy of food.</p>
+</div>
+<br>
+<div class="card_about">
+
+<h2>Contact Us</h2>
+<p>
+    Email: <a href="mailto:sawsan.s@ieee.org">sawsan.s@ieee.org</a>
+</p>
+<pr> Phone: +962787182884</pr>
+</div>
+    </div>
+<div class="right_about">
+    <img src="{%static 'img/right.jpg' %}" alt="About image">
+</div>
+</div>
 {% endblock content %}

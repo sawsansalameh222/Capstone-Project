@@ -1,6 +1,31 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+     background-image: url('../img/add_recipe_cover.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;}
+main {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    margin-left: 40px;   
+    margin-right: 20px; 
+}
+</style>
 <h2>Login</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form>
+{% endblock content %}

@@ -1,22 +1,37 @@
 {% extends 'Base.html' %}
 {% block content%}
+<style>
+    .card_details {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin: 10px;
+}
+</style>
 {% load static %}
-
+<h1  style="text-align: center;">{{ recipe.title }}</h1>
 <div class="container">
     <div class="left card">
+        {% if recipe.image %}
         <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
-</div>
-    <div class="right">
-        <h1>{{ recipe.title }}</h1>
+        <p><strong>Rating</strong>: {{ recipe.rating }} / 5</p>
         <p> <strong>Preparation Time</strong> :{{ recipe.prep_time }} minutes</p>
         <p><strong>Category</strong>: {{ recipe.category.name }}</p>
-        <p><strong>Rating</strong>: {{ recipe.rating }} / 5</p>
-        
-        <h2> Ingredients</h2>
-        <p>{{ recipe.ingredients|linebreaksbr }}</p>
-        <h2> Steps</h2>
-        <p>{{ recipe.steps|linebreaksbr }}</p>
+        {% else %}
+        <p>No image available.</p>
+    {% endif %}
+</div>
 
+    <div class="right">
+        
+        <div class="card_details">
+        <h2> Ingredients</h2>
+        <p>{{ recipe.ingredients|linebreaksbr }}</p></div>
+        <div class="card_details">
+        <h2 > Steps</h2>
+        <p>{{ recipe.steps|linebreaksbr }}</p>
+</div>
     </div>
     
 </div>

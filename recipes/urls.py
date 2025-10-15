@@ -11,4 +11,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),# built in django view
     path('recipe/<int:pk>/', views.recipe_detail, name='recipe_detail'),
     path('all_recipes/',views.all_recipes,name='all_recipes'),
+    path('delete_recipe/<int:pk>/', views.delete_recipe, name='delete_recipe'),
+    path('edit_recipe/<int:pk>/', views.edit_recipe, name='edit_recipe'),
 ]

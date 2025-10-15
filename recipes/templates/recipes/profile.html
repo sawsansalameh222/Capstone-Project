@@ -1,6 +1,6 @@
 {% extends 'Base.html' %}
-{% block content %}
 {% load static %}
+{% block content %}
 
 <style>
     .recipes-grid {
@@ -14,7 +14,7 @@
         background-color: white;
         padding: 15px;
         margin: 10px;
-        height: 500px;
+        height: 550px;
         overflow: hidden;
         text-align: center;
         transition: transform 0.2s ease;
@@ -28,6 +28,15 @@
         width: 100%;
         height:400px;
     }
+    .remove-btn {
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+    
 </style>
 <h2 style="text-align: center;"> Here You can Find all your recipes 👩‍🍳👨‍🍳</h2>
 <div class="recipes-grid">
@@ -37,6 +46,12 @@
             <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
         {% endif %}
         <h2><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></h2>
+         <a href="{% url 'edit_recipe' recipe.pk %}" class="edit-btn">Edit</a>
+        
+         <form method="post" action="{% url 'delete_recipe' recipe.pk %}">
+            {% csrf_token %}
+            <button type="submit" class="remove-btn">Remove</button>
+        </form>
     </div>
     {% empty %}
         <p>No recipes found.</p>

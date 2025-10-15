@@ -40,8 +40,9 @@
     
         {% if recipe.image %}
             <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
-            <h2><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></h2>
-        {% endif %}
+            {% endif %}
+           <h2><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></h2>
+        
     </div>
 {% empty %}
     <p>No recipes available.</p>
