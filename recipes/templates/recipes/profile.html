@@ -36,6 +36,17 @@
     font-weight: bold;
     margin-top: 10px;
 }
+@media (max-width: 1024px) {
+    .recipes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+}
     
 </style>
 <h2 style="text-align: center;"> Here You can Find all your recipes 👩‍🍳👨‍🍳</h2>

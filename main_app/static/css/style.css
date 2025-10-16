@@ -10,7 +10,7 @@ main {
     flex: 1; 
 }
 .navbar {
-    background-color: rgb(158, 91, 122);
+    background-color: rgb(243, 237, 240);
     display:flex;
     justify-content: space-between;
     padding: 20px 20px;
@@ -21,7 +21,7 @@ main {
     gap: 15px;
 }
 .footer {
-    background-color: rgb(158, 91, 122);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px ;
     margin-bottom: 7px;
     text-align: center;
